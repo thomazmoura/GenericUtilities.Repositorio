@@ -96,11 +96,5 @@ namespace GenericUtilities.Repositorio
         {
             Contexto.SaveChanges();
         }
-
-        /// <summary> Libera o contexto de dados da memória </summary>
-        public virtual void Dispose()
-        {
-            Contexto.Dispose();
-        }
     }
 }

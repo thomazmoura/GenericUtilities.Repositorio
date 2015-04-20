@@ -8,7 +8,7 @@ namespace GenericUtilities.Repositorio
 {
     /// <summary> Interface padrão para repositórios do sistema que permitem leitura. Possui apenas métodos para leitura com o tipo informado. </summary>
     /// <typeparam name="T"> O tipo específico do repositório. </typeparam>
-    interface IRepositorioLeitura<T> : IDisposable
+    interface IRepositorioLeitura<T>
     {
         /// <summary> Obter um objeto específico de acordo com sua ID. </summary>
         /// <param name="ID"> ID do objeto a ser retornado. </param>

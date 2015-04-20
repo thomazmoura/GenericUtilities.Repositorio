@@ -8,7 +8,7 @@ namespace GenericUtilities.Repositorio
 {
     /// <summary> Interface padrão para repositórios do sistema. Possui métodos para CRUD com o tipo informado. </summary>
     /// <typeparam name="T"> O tipo específico do repositório. </typeparam>
-    public interface IRepositorio<T> : IDisposable
+    public interface IRepositorio<T>
     {
         /// <summary> Obter um objeto específico de acordo com sua ID. </summary>
         /// <param name="ID"> ID do objeto a ser retornado. </param>

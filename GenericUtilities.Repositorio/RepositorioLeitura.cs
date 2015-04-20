@@ -63,11 +63,5 @@ namespace GenericUtilities.Repositorio
         {
             return Entidades;
         }
-
-        /// <summary> Libera o contexto de dados da memória </summary>
-        public virtual void Dispose()
-        {
-            Contexto.Dispose();
-        }
     }
 }
