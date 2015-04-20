@@ -9,7 +9,7 @@ namespace GenericUtilities.Repositorio
 {
     /// <summary> Repositório padrão para CRUD básico. </summary>
     /// <typeparam name="T"> Tipo (classe) de dados que esse repositório manipulará. </typeparam>
-    public class Repositorio<T>: IRepositorio<T> where T:class
+    public class Repositorio<T>: IRepositorio<T>, IRepositorioLeitura<T> where T:class
     {
         /// <summary> Referência à lista de entidades no contexto de dados. </summary>
         protected IDbSet<T> Entidades { get; set; }
