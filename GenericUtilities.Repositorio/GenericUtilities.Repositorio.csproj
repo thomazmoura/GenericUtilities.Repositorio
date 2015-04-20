@@ -51,6 +51,7 @@
     <Compile Include="IRepositorioLeitura.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositorio.cs" />
+    <Compile Include="RepositorioLeitura.cs" />
     <Compile Include="VersionBuilder.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

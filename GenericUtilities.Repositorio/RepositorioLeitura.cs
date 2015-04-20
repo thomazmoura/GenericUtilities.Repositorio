@@ -7,29 +7,30 @@ using System.Threading.Tasks;
 
 namespace GenericUtilities.Repositorio
 {
-    /// <summary> Repositório padrão para CRUD básico. </summary>
+    /// <summary> Repositório para leitura de dados somente. </summary>
     /// <typeparam name="T"> Tipo (classe) de dados que esse repositório manipulará. </typeparam>
-    public class Repositorio<T>: IRepositorio<T>, IRepositorioLeitura<T> where T:class
+    public class RepositorioLeitura<T> : IRepositorioLeitura<T> where T : class
     {
         /// <summary> Referência à lista de entidades no contexto de dados. </summary>
         protected IDbSet<T> Entidades { get; set; }
         /// <summary> Referência ao contexto de dados a qual esse repositório pertence. </summary>
         protected DbContext Contexto { get; set; }
 
-        /// <summary> Construtor padrão do Repositório Padrão. </summary>
+        /// <summary> Construtor padrão do Repositório somente Leitura. </summary>
         /// <param name="contextoParam"> O contexto de dados ao qual esse repositório pertence. </param>
         /// <param name="entidadesParam"> DBSet responsável pela manipulação dos objetos do tipo T. </param>
-        public Repositorio(DbContext contextoParam, IDbSet<T> entidadesParam)
+        public RepositorioLeitura(DbContext contextoParam, IDbSet<T> entidadesParam)
         {
             Entidades = entidadesParam;
             Contexto = contextoParam;
         }
 
-        /// <summary> Construtor do Repositório Padrão para detecção automática do IDbSet referente a T. </summary>
+
+        /// <summary> Construtor do Repositório somente Leitura para detecção automática do IDbSet referente a T. </summary>
         /// <param name="contextoParam"> <para>O contexto de dados ao qual esse repositório pertence.</para>
         /// <para> É necessário que o contexto passado possua alguma propriedade que implemente o IDbSet referente a T </para></param>
         /// <exception cref="ArgumentException"> Quando o contexto passado não possui um IDbSet referente a T </exception>
-        public Repositorio(DbContext contextoParam)
+        public RepositorioLeitura(DbContext contextoParam)
         {
             Entidades = contextoParam
                         .GetType()
@@ -44,6 +45,8 @@ namespace GenericUtilities.Repositorio
                 throw new ArgumentException(string.Format("Não foi possível detectar o DbSet correspondente ao tipo {0}. Verifique se o objeto de contexto de dados é válido.", typeof(T).Name));
 
             Contexto = contextoParam;
+            //Desativa a detecção de mudanças para melhorar a performance
+            Contexto.Configuration.AutoDetectChangesEnabled = false;
         }
 
         /// <summary> Obter um objeto específico de acordo com sua ID. </summary>
@@ -54,47 +57,11 @@ namespace GenericUtilities.Repositorio
             return Entidades.Find(id);
         }
 
-        /// <summary> Acrescenta um objeto ao repositório. </summary>
-        /// <param name="objeto"> O objeto a ser acrescentado ao repositório. </param>
-        public virtual void Acrescentar(T objeto)
-        {
-            Entidades.Add(objeto);
-        }
-
-        /// <summary> Edita um objeto existente no repositório com base em sua ID. </summary>
-        /// <param name="objeto"> O objeto que será usado como base para editar o objeto existente. </param>
-        public virtual void Editar(T objeto)
-        {
-            Entidades.Attach(objeto);
-            Contexto.Entry<T>(objeto).State = EntityState.Modified;
-        }
-
-        /// <summary> Exclui um objeto existente no repositorio </summary>
-        /// <param name="objeto"> A ID do objeto a ser excluído</param>
-        public virtual void Excluir(int id)
-        {
-            var objeto = Entidades.Find(id);
-            Entidades.Remove(objeto);
-        }
-
-        /// <summary> Exclui um objeto existente no repositorio </summary>
-        /// <param name="objeto"> O objeto a ser excluído</param>
-        public virtual void Excluir(T objeto)
-        {
-            Entidades.Remove(objeto);
-        }
-
         /// <summary> Lista todos os objetos do repositorio </summary>
         /// <returns> IQueryable contendo todos os objetos do repositorio </returns>
         public virtual IQueryable<T> ListarTodos()
         {
             return Entidades;
-        }
-
-        /// <summary> Efetiva as mudanças realizadas na fonte </summary>
-        public virtual void SaveChanges()
-        {
-            Contexto.SaveChanges();
         }
 
         /// <summary> Libera o contexto de dados da memória </summary>
