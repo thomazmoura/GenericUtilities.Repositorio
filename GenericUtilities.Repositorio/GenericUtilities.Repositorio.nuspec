@@ -10,7 +10,7 @@
     <projectUrl>https://github.com/thomazpadilha/GenericUtilities.Extensions</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>$description$</description>
-    <releaseNotes> Criação do construtor sem o parâmetro IDbSet do construtor do Repositorio para facilitar o suporte à Injeção de Dependência. </releaseNotes>
+    <releaseNotes> Remoção da interface IDisposable das interfaces IRepositorio e IRepositorioLeitura. </releaseNotes>
     <copyright>Copyright © ThomazP 2015</copyright>
     <tags>Repositorio Genérico Banco Repository DAL Utilitários Util Utilities</tags>
   </metadata>
