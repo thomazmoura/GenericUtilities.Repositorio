@@ -10,7 +10,7 @@
     <projectUrl>https://github.com/thomazpadilha/GenericUtilities.Extensions</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>$description$</description>
-    <releaseNotes> Remoção da interface IDisposable das interfaces IRepositorio e IRepositorioLeitura. </releaseNotes>
+    <releaseNotes> Acréscimo de interfaces de domínio para autenticação no sistema (IUsuario, IPerfil e IFuncao). </releaseNotes>
     <copyright>Copyright © ThomazP 2015</copyright>
     <tags>Repositorio Genérico Banco Repository DAL Utilitários Util Utilities</tags>
   </metadata>
