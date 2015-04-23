@@ -63,6 +63,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="GenericUtilities.Repositorio.nuspec" />
     <None Include="packages.config" />
     <None Include="VersionBuilder.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
