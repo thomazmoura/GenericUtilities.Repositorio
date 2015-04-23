@@ -52,7 +52,7 @@ namespace GenericUtilities.Repositorio
         /// <summary> Obter um objeto específico de acordo com sua ID. </summary>
         /// <param name="ID"> ID do objeto a ser retornado. </param>
         /// <returns> O objeto que possua a ID informada. </returns>
-        public virtual T ObterPorId(int id)
+        public virtual T ObterPorId(params object[] id)
         {
             return Entidades.Find(id);
         }

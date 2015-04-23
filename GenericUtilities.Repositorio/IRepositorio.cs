@@ -13,7 +13,7 @@ namespace GenericUtilities.Repositorio
         /// <summary> Obter um objeto específico de acordo com sua ID. </summary>
         /// <param name="ID"> ID do objeto a ser retornado. </param>
         /// <returns> O objeto que possua a ID informada. </returns>
-        T ObterPorId(int id);
+        T ObterPorId(params object[] id);
 
         /// <summary> Acrescenta um objeto ao repositório. </summary>
         /// <param name="objeto"> O objeto a ser acrescentado ao repositório. </param>

@@ -46,7 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IEntity.cs" />
+    <Compile Include="EntityAttribute.cs" />
     <Compile Include="IFuncao.cs" />
     <Compile Include="IPerfil.cs" />
     <Compile Include="IRepositorio.cs" />

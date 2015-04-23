@@ -9,7 +9,7 @@ namespace GenericUtilities.Repositorio
 {
     /// <summary> Repositório padrão para CRUD básico. </summary>
     /// <typeparam name="T"> Tipo (classe) de dados que esse repositório manipulará. </typeparam>
-    public class Repositorio<T>: IRepositorio<T>, IRepositorioLeitura<T> where T:class
+    public class Repositorio<T>: IRepositorio<T>, IRepositorioLeitura<T> where T: class
     {
         /// <summary> Referência à lista de entidades no contexto de dados. </summary>
         protected IDbSet<T> Entidades { get; set; }
@@ -49,7 +49,7 @@ namespace GenericUtilities.Repositorio
         /// <summary> Obter um objeto específico de acordo com sua ID. </summary>
         /// <param name="ID"> ID do objeto a ser retornado. </param>
         /// <returns> O objeto que possua a ID informada. </returns>
-        public virtual T ObterPorId(int id)
+        public virtual T ObterPorId(params object[] id)
         {
             return Entidades.Find(id);
         }

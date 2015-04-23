@@ -10,7 +10,11 @@
     <projectUrl>https://github.com/thomazpadilha/GenericUtilities.Extensions</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>$description$</description>
-    <releaseNotes> Acréscimo de interfaces de domínio para autenticação no sistema (IUsuario, IPerfil e IFuncao). </releaseNotes>
+    <releaseNotes>
+      Remoção da interface IEntity por ter se tornado obsoleta.
+      Criação do EntityAttribute para identificar classes que possuirão repositórios.
+      Alteração da assinatura do ObterPorId(int) para ObterPorId(params object[]).
+    </releaseNotes>
     <copyright>Copyright © ThomazP 2015</copyright>
     <tags>Repositorio Genérico Banco Repository DAL Utilitários Util Utilities</tags>
   </metadata>
