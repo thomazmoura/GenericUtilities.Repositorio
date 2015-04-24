@@ -9,7 +9,7 @@ namespace GenericUtilities.Repositorio
 {
     /// <summary> Repositorio especializado que, ao listar todos as entidades, retorna apenas as ativas
     ///     e ao excluir um elemento, apenas o desativa. </summary>
-    public class RepositorioAtivavel<T> : Repositorio<T> where T: class, IAtivavel
+    public class RepositorioAtivavel<T> : Repositorio<T>, IRepositorioAtivavel<T> where T: class, IAtivavel
     {
         /// <summary> Construtor do RepositorioAtivavel responsável pela detecção automática do IDbSet referente a T. </summary>
         /// <param name="contextoParam"> <para>O contexto de dados ao qual esse repositório pertence.</para>

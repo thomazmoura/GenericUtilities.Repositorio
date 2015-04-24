@@ -9,7 +9,7 @@ namespace GenericUtilities.Repositorio
     /// <summary> Especialização do IRepositorio voltado a entidades que implementem IAtivavel e que possui os métodos de consulta relativos
     ///  ao estado da entidade (ativo ou não). </summary>
     /// <typeparam name="T"></typeparam>
-    interface IRepositorioAtivavel<T>: IRepositorio<T> where T: class, IAtivavel
+    public interface IRepositorioAtivavel<T>: IRepositorio<T> where T: class, IAtivavel
     {
         /// <summary> Retorna apenas as entidades ativas. </summary>
         /// <returns> IQueryable contendo todos os objetos ativos do repositorio. </returns>
