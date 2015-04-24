@@ -11,9 +11,9 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>$description$</description>
     <releaseNotes>
-      Remoção da interface IEntity por ter se tornado obsoleta.
-      Criação do EntityAttribute para identificar classes que possuirão repositórios.
-      Alteração da assinatura do ObterPorId(int) para ObterPorId(params object[]).
+      Correção da assinatura do método Excluir do IRepositorio para receber params object[] ao invés de int.
+      Criação da interface IAtivavel para representar entidades que podem ser ativadas e desativadas.
+      Criação da interface IRepositorioAtivavel para manipular atividades que implementem IAtivavel e sua implementação padrão.
     </releaseNotes>
     <copyright>Copyright © ThomazP 2015</copyright>
     <tags>Repositorio Genérico Banco Repository DAL Utilitários Util Utilities</tags>

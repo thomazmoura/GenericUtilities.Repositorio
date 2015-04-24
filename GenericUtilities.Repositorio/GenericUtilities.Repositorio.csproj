@@ -47,13 +47,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="EntityAttribute.cs" />
+    <Compile Include="IAtivavel.cs" />
     <Compile Include="IFuncao.cs" />
     <Compile Include="IPerfil.cs" />
     <Compile Include="IRepositorio.cs" />
+    <Compile Include="IRepositorioAtivavel.cs" />
     <Compile Include="IRepositorioLeitura.cs" />
     <Compile Include="IUsuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositorio.cs" />
+    <Compile Include="RepositorioAtivavel.cs" />
     <Compile Include="RepositorioLeitura.cs" />
     <Compile Include="VersionBuilder.cs">
       <AutoGen>True</AutoGen>

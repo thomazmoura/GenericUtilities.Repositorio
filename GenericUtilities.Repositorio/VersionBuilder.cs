@@ -10,5 +10,5 @@ using System.Reflection;
 // minor: Novos recursos/funcionalidades
 // build: Ano e mês
 // revision: Dia e minutos (a partir de meia-noite) dividido por 15
-[assembly: AssemblyVersion("1.0.1504.2365")]
-[assembly: AssemblyFileVersion("1.0.1504.2365")]
+[assembly: AssemblyVersion("1.0.1504.2446")]
+[assembly: AssemblyFileVersion("1.0.1504.2446")]
