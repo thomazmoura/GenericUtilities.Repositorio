@@ -16,15 +16,6 @@ namespace GenericUtilities.Repositorio
         /// <summary> Referência ao contexto de dados a qual esse repositório pertence. </summary>
         protected DbContext Contexto { get; set; }
 
-        /// <summary> Construtor padrão do Repositório Padrão. </summary>
-        /// <param name="contextoParam"> O contexto de dados ao qual esse repositório pertence. </param>
-        /// <param name="entidadesParam"> DBSet responsável pela manipulação dos objetos do tipo T. </param>
-        public Repositorio(DbContext contextoParam, IDbSet<T> entidadesParam)
-        {
-            Entidades = entidadesParam;
-            Contexto = contextoParam;
-        }
-
         /// <summary> Construtor do Repositório Padrão para detecção automática do IDbSet referente a T. </summary>
         /// <param name="contextoParam"> <para>O contexto de dados ao qual esse repositório pertence.</para>
         /// <para> É necessário que o contexto passado possua alguma propriedade que implemente o IDbSet referente a T </para></param>
@@ -43,6 +34,15 @@ namespace GenericUtilities.Repositorio
             if (Entidades == null)
                 throw new ArgumentException(string.Format("Não foi possível detectar o DbSet correspondente ao tipo {0}. Verifique se o objeto de contexto de dados é válido.", typeof(T).Name));
 
+            Contexto = contextoParam;
+        }
+
+        /// <summary> Construtor padrão do Repositório Padrão. </summary>
+        /// <param name="contextoParam"> O contexto de dados ao qual esse repositório pertence. </param>
+        /// <param name="entidadesParam"> DBSet responsável pela manipulação dos objetos do tipo T. </param>
+        public Repositorio(DbContext contextoParam, IDbSet<T> entidadesParam)
+        {
+            Entidades = entidadesParam;
             Contexto = contextoParam;
         }
 
@@ -71,7 +71,7 @@ namespace GenericUtilities.Repositorio
 
         /// <summary> Exclui um objeto existente no repositorio </summary>
         /// <param name="objeto"> A ID do objeto a ser excluído</param>
-        public virtual void Excluir(int id)
+        public virtual void Excluir(params object[] id)
         {
             var objeto = Entidades.Find(id);
             Entidades.Remove(objeto);

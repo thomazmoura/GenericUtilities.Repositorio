@@ -16,16 +16,6 @@ namespace GenericUtilities.Repositorio
         /// <summary> Referência ao contexto de dados a qual esse repositório pertence. </summary>
         protected DbContext Contexto { get; set; }
 
-        /// <summary> Construtor padrão do Repositório somente Leitura. </summary>
-        /// <param name="contextoParam"> O contexto de dados ao qual esse repositório pertence. </param>
-        /// <param name="entidadesParam"> DBSet responsável pela manipulação dos objetos do tipo T. </param>
-        public RepositorioLeitura(DbContext contextoParam, IDbSet<T> entidadesParam)
-        {
-            Entidades = entidadesParam;
-            Contexto = contextoParam;
-        }
-
-
         /// <summary> Construtor do Repositório somente Leitura para detecção automática do IDbSet referente a T. </summary>
         /// <param name="contextoParam"> <para>O contexto de dados ao qual esse repositório pertence.</para>
         /// <para> É necessário que o contexto passado possua alguma propriedade que implemente o IDbSet referente a T </para></param>
@@ -44,6 +34,17 @@ namespace GenericUtilities.Repositorio
             if (Entidades == null)
                 throw new ArgumentException(string.Format("Não foi possível detectar o DbSet correspondente ao tipo {0}. Verifique se o objeto de contexto de dados é válido.", typeof(T).Name));
 
+            Contexto = contextoParam;
+            //Desativa a detecção de mudanças para melhorar a performance
+            Contexto.Configuration.AutoDetectChangesEnabled = false;
+        }
+
+        /// <summary> Construtor padrão do Repositório somente Leitura. </summary>
+        /// <param name="contextoParam"> O contexto de dados ao qual esse repositório pertence. </param>
+        /// <param name="entidadesParam"> DBSet responsável pela manipulação dos objetos do tipo T. </param>
+        public RepositorioLeitura(DbContext contextoParam, IDbSet<T> entidadesParam)
+        {
+            Entidades = entidadesParam;
             Contexto = contextoParam;
             //Desativa a detecção de mudanças para melhorar a performance
             Contexto.Configuration.AutoDetectChangesEnabled = false;

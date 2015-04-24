@@ -23,19 +23,19 @@ namespace GenericUtilities.Repositorio
         /// <param name="objeto"> O objeto que será usado como base para editar o objeto existente. </param>
         void Editar(T objeto);
 
-        /// <summary> Exclui um objeto existente no repositorio </summary>
-        /// <param name="objeto"> A ID do objeto a ser excluído</param>
-        void Excluir(int id);
+        /// <summary> Exclui um objeto existente no repositorio. </summary>
+        /// <param name="objeto"> A ID do objeto a ser excluído. </param>
+        void Excluir(params object[] id);
 
-        /// <summary> Exclui um objeto existente no repositorio </summary>
+        /// <summary> Exclui um objeto existente no repositorio. </summary>
         /// <param name="objeto"> O objeto a ser excluído</param>
         void Excluir(T objeto);
 
-        /// <summary> Lista todos os objetos do repositorio </summary>
-        /// <returns> IEnumerable contendo todos os objetos do repositorio </returns>
+        /// <summary> Lista todos os objetos do repositorio. </summary>
+        /// <returns> IQueryable contendo todos os objetos do repositorio. </returns>
         IQueryable<T> ListarTodos();
 
-        /// <summary> Efetiva as mudanças realizadas na fonte </summary>
+        /// <summary> Efetiva as mudanças realizadas na fonte. </summary>
         void SaveChanges();
     }
 }
