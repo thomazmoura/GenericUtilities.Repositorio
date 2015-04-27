@@ -11,8 +11,8 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>$description$</description>
     <releaseNotes>
-      Correção da interface IRepositorioAtivavel para possuir visibilidade pública.
-      Correção da implementação RepositorioAtivavel para implementar a interface IRepositorioAtivavel.
+      Criação das interfaces IEFRepositorio e IEFRepositorioAtivavel e suas respectivas implementações.
+      As interfaces IEFRepositorio e IEFRepositorioAtivavel são voltadas a Repositorios que trabalhem com o Entity Framework (pois precisam retornar um DbSet genérico ao invés de um IDbSet genérico) e possuem o diferencial de fornecer o acesso a esse DbSet para operações específicas do EF como a operação .Include().
     </releaseNotes>
     <copyright>Copyright © ThomazP 2015</copyright>
     <tags>Repositorio Genérico Banco Repository DAL Utilitários Util Utilities</tags>

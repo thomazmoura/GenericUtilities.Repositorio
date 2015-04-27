@@ -5,12 +5,12 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Tel.Repositorio")]
+[assembly: AssemblyTitle("GenericUtilities.Repositorio")]
 [assembly: AssemblyDescription("Biblioteca responsável por centralizar classes e métodos genéricos e padrões para acesso a banco de dados.")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Tel Telemática")]
-[assembly: AssemblyProduct("Tel.Repositorio")]
-[assembly: AssemblyCopyright("Copyright © Tel Telemática 2015")]
+[assembly: AssemblyCompany("ThomazPadilha")]
+[assembly: AssemblyProduct("GenericUtilities.Repositorio")]
+[assembly: AssemblyCopyright("Copyright © ThomazPadilha 2015")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

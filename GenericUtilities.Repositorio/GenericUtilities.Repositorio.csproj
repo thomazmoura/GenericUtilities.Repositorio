@@ -46,8 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EFRepositorio.cs" />
+    <Compile Include="EFRepositorioAtivavel.cs" />
     <Compile Include="EntityAttribute.cs" />
     <Compile Include="IAtivavel.cs" />
+    <Compile Include="IEFRepositorio.cs" />
+    <Compile Include="IEFRepositorioAtivavel.cs" />
     <Compile Include="IFuncao.cs" />
     <Compile Include="IPerfil.cs" />
     <Compile Include="IRepositorio.cs" />
